@@ -6,7 +6,6 @@ const router = Router();
 // Get all products
 router.get(
 	"/products",
-	checkRoles(["USER", "ADMIN"]),
 	ProductsController.getAllProducts
 );
 // Get product by ID
