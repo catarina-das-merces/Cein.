@@ -1,7 +1,7 @@
-import {Router} from "express";
-import {check} from "express-validator";
+import { Router } from "express";
+import { check } from "express-validator";
 import usersController from "../controllers/usersController.js";
-import {checkRoles} from "../middlewares/authMiddleware.js";
+import { checkRoles } from "../middlewares/authMiddleware.js";
 
 const router = Router();
 
@@ -30,18 +30,22 @@ const router = Router();
  */
 
 // get users
-router.get("/users", usersController.getAllUsers);
+router.get(
+	"/users",
+	checkRoles(["ADMIN", "USER"]),
+	usersController.getAllUsers
+);
 
 // Login user
 router.post(
-  "/login",
-  [
-    check("email").isEmail().withMessage("Invalid email."),
-    check("password")
-      .isLength({min: 5, max: 10})
-      .withMessage("Invalid password"),
-  ],
-  usersController.LoginUser
+	"/login",
+	[
+		check("email").isEmail().withMessage("Invalid email."),
+		check("password")
+			.isLength({ min: 5, max: 10 })
+			.withMessage("Invalid password"),
+	],
+	usersController.LoginUser
 );
 /**
  * @swagger
@@ -65,17 +69,17 @@ router.post(
  */
 // post new user
 router.post(
-  "/register",
-  [
-    check("name").notEmpty().withMessage("Name is required"),
-    check("email").isEmail().withMessage("invalid email."),
-    check("password")
-      .isLength({min: 6})
-      .withMessage("password must be at least 6 chars long"),
-    //check("password").isStrongPassword,
-    check("role").isIn(["USER", "ADMIN"]).withMessage("invalid role"),
-  ],
-  usersController.CreateUser
+	"/register",
+	[
+		check("name").notEmpty().withMessage("Name is required"),
+		check("email").isEmail().withMessage("invalid email."),
+		check("password")
+			.isLength({ min: 6 })
+			.withMessage("password must be at least 6 chars long"),
+		//check("password").isStrongPassword,
+		check("role").isIn(["USER"]).withMessage("invalid role"),
+	],
+	usersController.CreateUser
 );
 /**
  * @swagger
@@ -99,23 +103,27 @@ router.post(
  *               $ref: '#/components/schemas/User'
  */
 // get user by ID
-router.get("/users/:id", usersController.getAllUsersById);
+router.get(
+	"/users/:id",
+	checkRoles(["ADMIN"]),
+	usersController.getAllUsersById
+);
 
 // update user by ID
-router.put("/users/:id", usersController.updateUsers);
+router.put("/users/:id", checkRoles(["ADMIN"]), usersController.updateUsers);
 // delete user by ID
-router.delete("/users/:id", usersController.deleteUser);
+router.delete("/users/:id", checkRoles(["ADMIN"]), usersController.deleteUser);
 
 router.post(
-  "/admin",
-  [
-    check("email").isEmail().withMessage("Invalid email."),
-    check("password")
-      .isLength({min: 5, max: 10})
-      .withMessage("Invalid password"),
-  ],
-  checkRoles(["ADMIN"]),
-  usersController.AdminLogin
+	"/admin",
+	[
+		check("email").isEmail().withMessage("Invalid email."),
+		check("password")
+			.isLength({ min: 5, max: 10 })
+			.withMessage("Invalid password"),
+	],
+	checkRoles(["ADMIN"]),
+	usersController.AdminLogin
 );
 
 export default router;
