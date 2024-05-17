@@ -1,0 +1,24 @@
+@font-face {
+	font-family: "Arimo";
+	src: url("Arimo-VariableFont_wght.ttf");
+}
+
+@font-face {
+	font-family: "Zapf";
+	src: url("Zapf Humanist 601 Regular.otf");
+}
+
+html {
+	font-family: "Arimo", sans-serif;
+}
+
+#root {
+	font-size: 14px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}

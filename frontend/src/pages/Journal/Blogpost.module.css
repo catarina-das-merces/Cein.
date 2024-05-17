@@ -1,0 +1,305 @@
+.blogpost_title {
+	display: flex;
+	padding: 80px 280px;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+}
+
+.blogpost_title h1 {
+	color: #333;
+	text-align: center;
+	font-family: "Zapf";
+	font-size: 30px;
+	font-style: normal;
+	font-weight: lighter;
+	line-height: 40px;
+}
+
+.blogpost_title h4 {
+	color: #333;
+	text-align: center;
+	font-family: "Arimo";
+	font-size: 16px;
+	line-height: 27px;
+}
+
+.blogpost_image img {
+	width: 100%;
+}
+
+.media_img {
+	display: none;
+}
+
+.image_container {
+	padding: 40px;
+	display: grid;
+	grid-auto-columns: 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 10px 48px;
+	grid-template-areas:
+		"image1 image2"
+		"image1 image3";
+	width: 100%;
+}
+
+.image1 {
+	grid-area: image1;
+}
+.image2 {
+	grid-area: image2;
+}
+.image3 {
+	grid-area: image3;
+}
+
+.post_section {
+	display: flex;
+	padding: 100px 32px;
+	flex-direction: column;
+	align-items: flex-start;
+	align-self: stretch;
+}
+
+.post_section p {
+	font-family: "Zapf";
+}
+
+.post_section h5 {
+	font-family: "Zapf";
+	font-size: 30px;
+}
+
+.post_list {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	width: 100%;
+	padding-top: 32px;
+}
+
+.post_list_info {
+	padding-top: 40px;
+}
+
+.post_list_info h6 {
+	color: #cdcbc0;
+	font-family: "Arimo";
+	font-size: 13px;
+}
+
+.post_list_info span {
+	font-family: "Arimo ";
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 23.8px;
+	letter-spacing: -0.28px;
+}
+
+.post_list_btn {
+	padding-top: 40px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+	.desktop_img {
+		display: none;
+	}
+
+	.media_img {
+		display: flex;
+		padding: 0 20px;
+	}
+
+	.blogpost_image img {
+		width: 90%;
+	}
+
+	.blogpost_title {
+		display: flex;
+		padding: 80px 20px;
+		flex-direction: column;
+		align-items: center;
+		gap: 30px;
+		align-self: stretch;
+	}
+
+	.image_container {
+		padding: 0 31px;
+		align-items: baseline;
+		grid-template-columns: 1fr;
+		grid-auto-flow: row;
+		grid-template-areas:
+			"image1"
+			"image2"
+			"image3";
+	}
+
+	.image1 {
+		grid-area: image1;
+	}
+
+	.image2 {
+		grid-area: image2;
+	}
+
+	.image3 {
+		display: none;
+	}
+
+	.image1 img {
+		max-width: 335px;
+		max-height: 321px;
+	}
+	.image2 img {
+		max-width: 335px;
+		max-height: 321px;
+	}
+	.image3 img {
+		max-width: 335px;
+		max-height: 321px;
+	}
+
+	.post_section {
+		padding: 45px 20px;
+	}
+
+	.post_section h5 {
+		display: none;
+	}
+
+	.post_section p {
+		width: 50%;
+		display: none;
+	}
+
+	.post_list {
+		grid-auto-columns: 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+		width: 100%;
+		gap: 10px;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		white-space: nowrap;
+	}
+
+	.post_list_card {
+		max-width: 166px;
+		max-height: 350px;
+		display: inline-block;
+	}
+	.post_list_card img {
+		width: 100%;
+	}
+
+	.post_list_span {
+		text-wrap: wrap;
+	}
+	.post_list_info {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.desktop_img {
+		display: none;
+	}
+
+	.media_img {
+		display: flex;
+		padding: 0 20px;
+	}
+
+	.blogpost_image img {
+		width: 90%;
+	}
+
+	.blogpost_title {
+		display: flex;
+		padding: 80px 20px;
+		flex-direction: column;
+		align-items: center;
+		gap: 30px;
+		align-self: stretch;
+	}
+
+	.image_container {
+		padding: 0 31px;
+		align-items: baseline;
+		grid-template-columns: 1fr;
+		grid-auto-flow: row;
+		grid-template-areas:
+			"image1"
+			"image2"
+			"image3";
+	}
+
+	.image1 {
+		grid-area: image1;
+	}
+
+	.image2 {
+		grid-area: image2;
+	}
+
+	.image3 {
+		display: none;
+	}
+
+	.image1 img {
+		max-width: 335px;
+		max-height: 321px;
+	}
+	.image2 img {
+		max-width: 335px;
+		max-height: 321px;
+	}
+	.image3 img {
+		max-width: 335px;
+		max-height: 321px;
+	}
+
+	.post_section {
+		padding: 45px 20px;
+	}
+
+	.post_section h5 {
+		display: none;
+	}
+
+	.post_section p {
+		width: 50%;
+		display: none;
+	}
+
+	.post_list {
+		grid-auto-columns: 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+		width: 100%;
+		gap: 10px;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		white-space: nowrap;
+	}
+
+	.post_list_card {
+		max-width: 166px;
+		max-height: 350px;
+		display: inline-block;
+	}
+	.post_list_card img {
+		width: 100%;
+	}
+
+	.post_list_span {
+		text-wrap: wrap;
+	}
+	.post_list_info {
+		width: 100%;
+	}
+}

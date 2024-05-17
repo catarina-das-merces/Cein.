@@ -1,0 +1,174 @@
+.media_img {
+	display: none;
+}
+
+.desktop_img {
+	width: 100%;
+}
+
+.productpage_img {
+	position: relative;
+}
+
+.productpage_title {
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	transform: translate(-50%, -50%);
+}
+
+.productpage_title h1 {
+	color: #fff;
+	font-family: "Arimo";
+	font-size: 30px;
+	line-height: 40px;
+}
+
+.productpage_title p {
+	max-width: 395px;
+	color: #fff;
+	font-family: "Arimo";
+	font-size: 16px;
+	line-height: 27px;
+}
+
+.productpage_filter {
+	background-color: #f2f3ec;
+	display: flex;
+	padding: 40px;
+	align-items: center;
+	gap: 22px;
+	align-self: stretch;
+	cursor: pointer;
+}
+
+.main_title {
+	display: flex;
+	padding: 80px;
+	flex-direction: column;
+	align-items: flex-start;
+	align-self: stretch;
+}
+
+.main_title p {
+	color: #333;
+	font-family: "Arimo";
+	font-size: 14px;
+	line-height: 23.8px;
+	letter-spacing: -0.14px;
+}
+
+.main_title h3 {
+	color: #333;
+	font-family: "Zapf";
+	font-size: 30px;
+	line-height: 40px;
+}
+
+.card_section {
+	width: 100%;
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+}
+
+.post_section {
+	display: flex;
+	padding: 100px 32px;
+	flex-direction: column;
+	align-items: flex-start;
+	align-self: stretch;
+}
+
+.post_list {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	width: 100%;
+	padding-top: 32px;
+	gap: 10px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.post_list_span {
+	text-wrap: wrap;
+}
+
+.post_list_info {
+	padding-top: 40px;
+}
+
+.post_list_info h6 {
+	color: #cdcbc0;
+	font-family: "Arimo";
+	font-size: 13px;
+}
+
+.post_list_info span {
+	font-family: "Arimo ";
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 23.8px;
+	letter-spacing: -0.28px;
+}
+
+.post_list_btn {
+	padding-top: 40px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+@media (max-width: 799px) {
+	.desktop_img {
+		display: none;
+	}
+
+	.media_img {
+		width: 100%;
+		display: flex;
+	}
+
+	.productpage_title {
+		padding: 32px 20px;
+		background-color: #e8e8dd;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, 0%);
+	}
+
+	.productpage_title h1 {
+		color: #333;
+	}
+
+	.productpage_title p {
+		color: #333;
+	}
+
+	.productpage_filter {
+		text-wrap: nowrap;
+		font-size: 12px;
+		gap: 10px;
+		overflow-x: scroll;
+		overflow-y: hidden;
+	}
+
+	.main_title {
+		padding: 45px 20px;
+	}
+
+	.card_section {
+		display: flex;
+		justify-content: center;
+	}
+
+	.post_list_card {
+		max-width: 166px;
+		max-height: 350px;
+	}
+
+	.post_list_card img {
+		max-height: 153px;
+	}
+}

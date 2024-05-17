@@ -1,0 +1,119 @@
+.popupBackground {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--Neutral-overlay, rgba(0, 0, 0, 0.6));
+	z-index: 999;
+}
+
+.popup {
+	font-family: "Zapf";
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: var(--Sand-200, #f2f3ec);
+	box-shadow: 0px 43px 43px 0px rgba(0, 0, 0, 0.2);
+	max-width: 850px;
+	width: 100%;
+	z-index: 9999;
+	perspective: 1000px;
+}
+
+.popup_info {
+	display: flex;
+	width: 100%;
+}
+
+.popup_left {
+	display: flex;
+	padding: 0px 48px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+	flex: 1 0 0;
+	align-self: stretch;
+}
+
+.popup_title {
+	font-size: 30px;
+}
+
+.popup_info {
+	font-size: 16px;
+}
+
+.popup_email {
+	align-self: stretch;
+	padding: 14px;
+}
+
+.popup_btn {
+	align-self: stretch;
+	color: #fff;
+	background-color: #333;
+	padding: 20px;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.popup_consents {
+	text-align: left;
+	font-size: 12px;
+}
+
+.popup_right {
+	width: 50%;
+}
+
+.popup_img {
+	width: 100%;
+	height: 100%;
+}
+
+.popup_img_small {
+	display: none;
+}
+
+.close {
+	position: absolute;
+	top: 13px;
+	right: 14px;
+	cursor: pointer;
+}
+
+@media (max-width: 769px) {
+	.popup {
+		display: flex;
+		max-width: 334px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	.popup_info {
+		display: flex;
+		flex-direction: column;
+	}
+	.popup_img {
+		display: none;
+	}
+
+	.popup_img_small {
+		display: block;
+	}
+	.popup_left {
+		justify-content: center;
+		align-items: center;
+		gap: 12px;
+		align-self: stretch;
+
+		order: 2;
+	}
+	.popup_right {
+		width: 100%;
+		order: 1;
+	}
+}
