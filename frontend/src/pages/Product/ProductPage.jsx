@@ -3,6 +3,7 @@ import styles from "./ProductPage.module.css";
 import { Link } from "react-router-dom";
 import ProductCard from "../../Components/Cards/ProductCard";
 import { ProductContext } from "../../Context/ProductContext";
+import Slider from "../../Components/Slider/Slider";
 
 const Productpage = () => {
 	const { products } = useContext(ProductContext);
