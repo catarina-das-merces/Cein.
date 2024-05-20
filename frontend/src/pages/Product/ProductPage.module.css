@@ -171,4 +171,6 @@
 	.post_list_card img {
 		max-height: 153px;
 	}
+	.post_list {
+		padding-bottom: 20px;
 }
