@@ -168,8 +168,8 @@
 	.about_first {
 		padding-top: 0px 0px;
 	}
-	.about_image,
-	.about_img2 {
+		.first_image,
+	.second_image {
 		width: 100%;
 	}
 	.first_info,
