@@ -12,31 +12,29 @@ const router = Router();
  *  description: API endpoints for managing users
  */
 
+// Login user
 /**
  * @swagger
- * /auth/users:
- *   get:
- *     summary: Get all users
- *     tags: [users]
+ * /auth/login:
+ *   post:
+ *     summary: Login a user
+ *     tags: [Users]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email: {type: string, format: email}
+ *               password: {type: string}
+ *             required: [email, password]
  *     responses:
  *       200:
- *         description: A list of users
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *               $ref: '#/components/schemas/User'
+ *         description: Login successful
+ *       401:
+ *         description: Invalid credentials
  */
-
-// get users
-router.get(
-	"/users",
-	checkRoles(["ADMIN", "USER"]),
-	usersController.getAllUsers
-);
-
-// Login user
 router.post(
 	"/login",
 	[
@@ -109,10 +107,92 @@ router.get(
 	usersController.getAllUsersById
 );
 
+/**
+ * @swagger
+ * /auth/users/{id}:
+ *   put:
+ *     summary: Update a user by ID
+ *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID of the user to update
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/UserInput'
+ *     responses:
+ *       200:
+ *         description: The user was updated
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/User'
+ *       401:
+ *         description: Unauthorized
+ *       404:
+ *         description: User not found
+ */
+
 // update user by ID
 router.put("/users/:id", checkRoles(["ADMIN"]), usersController.updateUsers);
+
+/**
+ * @swagger
+ * /auth/users/{id}:
+ *   delete:
+ *     summary: Delete a user by ID
+ *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID of the user to delete
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: The user was deleted
+ *       401:
+ *         description: Unauthorized
+ *       404:
+ *         description: User not found
+ */
+
 // delete user by ID
 router.delete("/users/:id", checkRoles(["ADMIN"]), usersController.deleteUser);
+
+/**
+ * @swagger
+ * /auth/admin:
+ *   post:
+ *     summary: Admin login
+ *     tags: [Users]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email: {type: string, format: email}
+ *               password: {type: string}
+ *             required: [email, password]
+ *     responses:
+ *       200:
+ *         description: Admin login successful
+ *       401:
+ *         description: Invalid credentials
+ */
 
 router.post(
 	"/admin",

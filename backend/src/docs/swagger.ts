@@ -10,6 +10,13 @@ export default function SetupSwagger(app: Express) {
         version: "1.0.0",
       },
       components: {
+        securitySchemes: {
+          bearerAuth: {
+            type: 'http',
+            scheme: 'bearer',
+            bearerFormat: 'JWT',
+          },
+        },
         schemas: {
           UserInput: {
             type: `object`,
@@ -22,6 +29,50 @@ export default function SetupSwagger(app: Express) {
               isActive: {type: `boolean`},
             },
             required: [`name`, `email`, `password`, `role`],
+          },
+          User: {
+            type: `object`,
+            properties: {
+              id: {type: `integer`},
+              name: {type: `string`},
+              email: {type: `string`, format: `email`},
+              avatar: {type: `string`},
+              role: {type: `string`, enum: [`USER`, `ADMIN`]},
+              isActive: {type: `boolean`},
+            },
+            required: [`id`, `name`, `email`, `role`],
+          },
+          Product: {
+            type: `object`,
+            properties: {
+              id: {type: `integer`},
+              title: {type: `string`},
+              price: {type: `number`},
+              description: {type: `string`},
+              category: {type: `string`},
+              variation: {type: `string`},
+              image: {type: `string`},
+              rating: {
+                type: `object`,
+                properties: {
+                  rate: {type: `number`},
+                  count: {type: `integer`},
+                },
+              },
+            },
+            required: [`id`, `title`, `price`, `description`, `category`, `variation`, `image`],
+          },
+          ProductInput: {
+            type: `object`,
+            properties: {
+              title: {type: `string`},
+              price: {type: `number`},
+              description: {type: `string`},
+              category: {type: `string`},
+              variation: {type: `string`},
+              image: {type: `string`},
+            },
+            required: [`title`, `price`, `description`, `category`, `variation`, `image`],
           },
         },
       },
