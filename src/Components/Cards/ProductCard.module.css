@@ -1,0 +1,63 @@
+.productcard {
+	border-radius: 10px;
+	max-width: 347px;
+	height: 520px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 30px;
+	flex: 1 0 0;
+}
+
+.productcard:hover {
+	background-color: #f2f3ec;
+}
+.productcard:hover .addtocart_btn {
+	display: flex;
+}
+
+.productcard_img {
+	max-width: 347px;
+	max-height: 288px;
+}
+.productcard_details,
+.productcard_info {
+	width: 100%;
+	text-align: center;
+}
+
+.productcard_details h6 {
+	font-family: "Arimo";
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 23.8px;
+	letter-spacing: -0.28px;
+}
+
+.productcard_details p {
+	font-family: "Arimo";
+	font-size: 14px;
+	line-height: 23.8px;
+	letter-spacing: -0.14px;
+}
+
+.productcard_info {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.addtocart_btn {
+	color: #fff;
+	display: none;
+	padding: 19px 23px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	align-self: stretch;
+	border: 1px solid #333;
+	background: #333;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	cursor: pointer;
+}

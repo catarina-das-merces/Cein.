@@ -1,0 +1,140 @@
+.hamburguer {
+	display: none;
+}
+
+.announcement_bar {
+	height: auto;
+	display: flex;
+	padding: 12px 20px;
+	justify-content: center;
+	align-self: stretch;
+	background: #333;
+	color: #fff;
+	font-family: "Arimo", sans-serif;
+}
+
+.menu_section {
+	display: flex;
+	padding: 30px 32px;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #333;
+	background: #fbfefb;
+	font-family: "Arimo";
+}
+
+.desktop_options li {
+	font-size: 14px;
+	list-style-type: none;
+}
+
+.desktop_options ul {
+	left: 0;
+	display: flex;
+	gap: 22px;
+}
+
+.menu_icons {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 28px;
+}
+
+.menu_icons svg {
+	width: 14px;
+	height: 14px;
+}
+
+.menu_icons span {
+	font-size: 13px;
+	display: flex;
+	gap: 5px;
+}
+
+.menu_icons p {
+	font-size: 14px;
+}
+
+.login_stuff {
+	display: flex;
+	gap: 10px;
+}
+
+.login_stuff svg {
+	cursor: pointer;
+}
+@media (max-width: 768px) {
+	.announcement_bar {
+		font-size: 14px;
+		text-align: center;
+	}
+
+	.hamburguer {
+		display: flex;
+		border: none;
+		cursor: pointer;
+		padding: 20px;
+	}
+	.menu_options_open {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 93%;
+		background-color: #fbfefb;
+		z-index: 1000;
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+		display: block;
+		padding: 15px 15px;
+	}
+
+	.menu_options_open ul {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.menu_options_open li {
+		text-align: center;
+		color: #333;
+		font-family: "Arimo";
+		font-size: 20px;
+		line-height: 36px;
+	}
+
+	.menu_options_close {
+		display: none;
+	}
+
+	.menu_icons {
+		display: flex;
+		gap: 12px;
+	}
+
+	.menu_icons .heart,
+	.menu_icons .search {
+		display: none;
+	}
+
+	.menu_section {
+		position: relative;
+		display: flex;
+	}
+
+	.menu_options ul {
+		padding: 20px;
+		margin: 0;
+		text-decoration: none;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.menu_options ul li {
+		margin-bottom: 10px;
+	}
+
+	.menu_section:hover .menu_options {
+		display: block;
+	}
+}

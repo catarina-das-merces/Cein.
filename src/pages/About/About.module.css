@@ -1,0 +1,182 @@
+.about_first {
+	display: flex;
+	padding: 70px 268px 70px 80px;
+	align-items: flex-start;
+	gap: 134px;
+	align-self: stretch;
+}
+
+.first_info {
+	display: flex;
+	max-width: 50%;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 30px;
+	flex: 1 0 0;
+}
+
+.first_info h5 {
+	font-family: "Arimo";
+	font-size: 30px;
+}
+
+.first_info p {
+	font-family: "Arimo";
+	font-size: 16px;
+	line-height: 168.75%;
+}
+
+.white_btn {
+	display: flex;
+	padding: 19px 23px;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	align-self: stretch;
+	background-color: transparent;
+	border: 1px solid #cdcbc0;
+	cursor: pointer;
+}
+
+.about_second {
+	display: flex;
+	padding: 70px 80px;
+	align-items: flex-start;
+	gap: 134px;
+	align-self: stretch;
+}
+
+.second_info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 30px;
+	flex: 1 0 0;
+}
+
+.second_info h4 {
+	font-family: "Zapf";
+	font-size: 30px;
+	line-height: 40px;
+}
+
+.about_third {
+	padding: 70px 80px;
+}
+
+.third_image {
+	width: 100%;
+}
+
+.about_fourth {
+	display: flex;
+	padding: 150px 40px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	align-self: stretch;
+	background: #e8e8dd;
+}
+
+.about_fourth h5 {
+	max-width: 53%;
+	text-align: center;
+	font-family: "Zapf";
+	font-size: 30px;
+	line-height: 40px;
+}
+
+.about_fifth {
+	display: flex;
+}
+
+.about_content {
+	width: 100%;
+	position: relative;
+}
+
+.about_content span {
+	color: white;
+}
+.fifth_image {
+	width: 100%;
+}
+
+.fifth_info {
+	display: flex;
+	position: absolute;
+	max-width: 395px;
+	top: 39%;
+	left: 39%;
+	transform: translate(-50%, -50%);
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 30px;
+}
+
+.fifth_info p {
+	color: #fff;
+	font-family: "Arimo";
+	line-height: 23.8px;
+}
+
+.fifth_info h5 {
+	color: #fff;
+	font-family: "Arimo";
+	font-size: 30px;
+	line-height: 23.8px;
+}
+
+@media screen and (max-width: 1200px) {
+	.about_first,
+	.about_second,
+	.about_third,
+	.about_fourth,
+	.about_fifth {
+		padding: 45px 20px;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.about_first,
+	.about_second,
+	.about_third,
+	.about_fourth,
+	.about_fifth {
+		flex-direction: column;
+		align-items: center;
+		gap: 0;
+		padding: 0px;
+	}
+	.about_fourth {
+		padding: 45px 20px;
+	}
+	.about_fourth h5 {
+		max-width: 100%;
+		font-size: 25px;
+	}
+
+	.fifth_info {
+		top: 47%;
+		gap: 15px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.about_first {
+		padding-top: 0px 0px;
+	}
+	.first_info,
+	.second_info {
+		max-width: 100%;
+		padding: 45px;
+	}
+	.second_info {
+		order: 2;
+	}
+	.about_second {
+		order: 1;
+	}
+}

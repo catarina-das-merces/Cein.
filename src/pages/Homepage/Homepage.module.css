@@ -1,0 +1,258 @@
+.media_img {
+	display: none;
+	width: 100%;
+}
+.desktop_img {
+	width: 100%;
+}
+
+.hero_section {
+	position: relative;
+}
+
+.hero_title {
+	display: flex;
+	width: 395px;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 15px;
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 17%;
+	transform: translate(-50%, -50%);
+}
+
+.hero_title h6 {
+	font-size: 14px;
+	letter-spacing: -0.14px;
+}
+
+.hero_title h1 {
+	font-size: 30px;
+	line-height: 40px;
+}
+
+.hero_title p {
+	font-size: 16px;
+	line-height: 27px;
+}
+
+.white_btn {
+	max-width: 207px;
+	color: #fff;
+	display: flex;
+	padding: 19px 23px;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	align-self: stretch;
+	background-color: transparent;
+	border: 1px solid #fff;
+	cursor: pointer;
+	margin-top: 30px;
+}
+
+.home_journal {
+	display: flex;
+	padding: 150px 80px;
+	align-items: center;
+	gap: 116px;
+	align-self: stretch;
+}
+
+.black_btn {
+	display: flex;
+	width: 207px;
+	padding: 19px 23px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	border: 1px solid #cdcbc0;
+	margin-top: 53px;
+}
+
+.journal_description h6 {
+	font-size: 14px;
+	letter-spacing: -0.14px;
+}
+
+.journal_description h2 {
+	font-size: 30px;
+	line-height: 40px;
+	margin-bottom: 20px;
+}
+
+.journal_description p {
+	font-size: 16px;
+	line-height: 27px;
+}
+
+.sugestion_section {
+	display: flex;
+	padding: 100px 32px;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 32px;
+	align-self: stretch;
+}
+
+.sugestion_titles {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
+}
+
+.sugestion_titles h4 {
+	color: #333;
+	font-family: "Zapf";
+	font-size: 30px;
+	line-height: 40px;
+}
+
+.sugestion_cards {
+	display: flex;
+	align-items: flex-start;
+	gap: 3px;
+	align-self: stretch;
+}
+
+.quote_section {
+	display: flex;
+	padding: 150px 40px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	align-self: stretch;
+	background: #e8e8dd;
+}
+
+.quote_section h1 {
+	max-width: 650px;
+	color: #333;
+	text-align: center;
+	font-family: "Zapf";
+	font-size: 30px;
+	line-height: 40px;
+}
+
+.quote_section p {
+	color: #333;
+	text-align: center;
+	font-family: "Arimo";
+	font-size: 14px;
+	line-height: 23.8px;
+	letter-spacing: -0.14px;
+}
+
+.social_section {
+	display: flex;
+	padding: 80px 0px;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+	align-self: stretch;
+	background: #f2f3ec;
+}
+
+.social_section h4 {
+	color: #333;
+	text-align: center;
+	font-family: "Zapf";
+	font-size: 30px;
+	line-height: 40px;
+}
+
+.instagram_post {
+	display: grid;
+	grid-auto-columns: 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 12px 12px;
+}
+
+.post_section {
+	display: flex;
+	padding: 100px 32px;
+	flex-direction: column;
+	align-items: flex-start;
+	align-self: stretch;
+}
+
+.post_section p {
+	font-family: "Zapf";
+}
+
+.post_section h5 {
+	font-family: "Zapf";
+	font-size: 30px;
+}
+
+@media (max-width: 768px) {
+	.desktop_img {
+		display: none;
+	}
+	.media_img {
+		width: 100%;
+		display: flex;
+	}
+
+	.hero_title {
+		width: 100%;
+		padding: 32px 0px;
+		flex-direction: column;
+		align-items: center;
+		gap: 30px;
+		position: relative;
+		background: #333;
+		top: 0;
+		left: 0;
+		transform: translate(0px, 0px);
+		text-wrap: wrap;
+	}
+
+	.hero_title h6,
+	h1,
+	p {
+		max-width: 335px;
+		text-wrap: wrap;
+	}
+
+	.white_btn {
+		margin-left: 20px;
+	}
+
+	.home_journal {
+		display: flex;
+		padding: 45px 20px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 30px;
+		align-self: stretch;
+	}
+
+	.sugestion_cards {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		width: 100%;
+		padding-top: 32px;
+		gap: 10px;
+		overflow-x: scroll;
+		overflow-y: hidden;
+	}
+
+	.instagram_post {
+		grid-template-rows: 1fr 1fr 1fr;
+	}
+
+	.journal_img {
+		width: 100%;
+	}
+
+	.post_section {
+		position: sticky;
+	}
+}

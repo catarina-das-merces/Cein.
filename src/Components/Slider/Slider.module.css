@@ -1,0 +1,51 @@
+.scroll_arrows {
+	display: flex;
+	gap: 5px;
+	align-self: flex-end;
+	cursor: pointer;
+}
+
+.post_list {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	width: 100%;
+	padding-top: 32px;
+	gap: 10px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.post_list_span {
+	text-wrap: wrap;
+}
+
+.post_list_info {
+	padding-top: 40px;
+}
+
+.post_list_info h6 {
+	color: #cdcbc0;
+	font-family: "Arimo";
+	font-size: 13px;
+}
+
+.post_list_info span {
+	font-family: "Arimo ";
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 23.8px;
+	letter-spacing: -0.28px;
+}
+
+.post_list_btn {
+	padding-top: 40px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+@media (max-width: 768px) {
+	.scroll_arrows {
+		display: none;
+	}
+}
