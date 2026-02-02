@@ -5,7 +5,7 @@ import jsonFileReader from "../utils/jsonFileReader.js";
 import {Request, Response} from "express";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import userModel from "../models/userModel.js";
 dotenv.config();
 
