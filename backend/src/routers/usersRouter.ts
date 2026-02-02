@@ -43,7 +43,7 @@ router.post(
 			.isLength({ min: 5, max: 10 })
 			.withMessage("Invalid password"),
 	],
-	usersController.LoginUser
+	usersController.LoginUser,
 );
 /**
  * @swagger
@@ -77,7 +77,7 @@ router.post(
 		//check("password").isStrongPassword,
 		check("role").isIn(["USER"]).withMessage("invalid role"),
 	],
-	usersController.CreateUser
+	usersController.CreateUser,
 );
 /**
  * @swagger
@@ -104,7 +104,7 @@ router.post(
 router.get(
 	"/users/:id",
 	checkRoles(["ADMIN"]),
-	usersController.getAllUsersById
+	usersController.getAllUsersById,
 );
 
 /**
@@ -203,7 +203,7 @@ router.post(
 			.withMessage("Invalid password"),
 	],
 	checkRoles(["ADMIN"]),
-	usersController.AdminLogin
+	usersController.AdminLogin,
 );
 
 export default router;

@@ -28,10 +28,7 @@ const router = Router();
  *               items:
  *                 $ref: '#/components/schemas/Product'
  */
-router.get(
-	"/products",
-	ProductsController.getAllProducts
-);
+router.get("/products", ProductsController.getAllProducts);
 
 /**
  * @swagger
@@ -65,7 +62,7 @@ router.get(
 router.get(
 	"/products/:id",
 	checkRoles(["USER", "ADMIN"]),
-	ProductsController.getProductById
+	ProductsController.getProductById,
 );
 
 /**
@@ -97,7 +94,7 @@ router.get(
 router.post(
 	"/products",
 	checkRoles(["ADMIN"]),
-	ProductsController.createProduct
+	ProductsController.createProduct,
 );
 
 /**
@@ -138,7 +135,7 @@ router.post(
 router.put(
 	"/products/:id",
 	checkRoles(["ADMIN"]),
-	ProductsController.updateProduct
+	ProductsController.updateProduct,
 );
 
 /**
@@ -169,6 +166,6 @@ router.put(
 router.delete(
 	"/products/:id",
 	checkRoles(["ADMIN"]),
-	ProductsController.deleteProduct
+	ProductsController.deleteProduct,
 );
 export default router;
